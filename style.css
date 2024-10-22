@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    text-wrap: wrap;
+    letter-spacing: 1.5px;
+}
+.flex{
+    display: flex;
+}
+/* =================================================== Container */
+.container{
+    height: 100vh;
+    background-image: -webkit-linear-gradient(
+        233deg,
+        rgba(128, 0, 128, 0.742),
+        purple,
+        black,
+        black
+    );
+    background-size: 50%;
+    animation: animate 10s infinite linear alternate ;
+    color: aliceblue;
+    flex-direction: column;
+}
+@keyframes animate {
+    0%{
+        background-size: 100%;
+    }
+    100%{
+        background-size: 300%;
+    }
+}
+/* =================================================== Div da Pergunta  */
+.question-box{
+    height: 40vh;
+    width: 66vw;
+    border-bottom: 3px solid purple;
+    border-top: 3px solid purple;
+    margin: 13px 233px auto;
+    margin-bottom: 13px;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 33px;
+    box-shadow: 
+    inset .1em .1em 2em black,
+    inset .1em .1em 2em purple,
+    inset -.1em -.1em .2em purple;
+    padding: 13px;
+    flex-direction: column;
+}
+/* =================================================== Conteudo das Respostas  */
+.content-answer{
+    height: 50%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 13px;
+    padding: 13px;
+}
+.box-answer{
+    background-image: -webkit-linear-gradient(
+        233deg,
+       rgb(128, 0, 128),
+       black,
+       black
+   );        
+   width: 35vw;
+   height: 10vw;
+   border: none;
+   color: aliceblue;
+   justify-content: space-around;
+   align-items: center;
+   text-align: justify;
+   letter-spacing: .5px;
+   padding: 13px ;
+   border-left: 3px solid purple;
+   border-right: 3px solid rgba(213, 213, 213, 0.845);
+   border-top-left-radius: 33px;
+   border-top-right-radius: 33px;
+   border-bottom-right-radius: 13px;
+   border-bottom-left-radius: 13px;
+   box-shadow: 0px 0px 10px purple,
+   inset .1em .1em .2em black,
+   inset -.1em -.1em .2em rgb(239, 15, 239);
+}
+.right{
+    background-image: -webkit-linear-gradient(
+         233deg,
+        rgb(15, 188, 56),
+        black,
+        black
+    );        
+    width: 35vw;
+    height: 10vw;
+    border: none;
+    color: aliceblue;
+    justify-content: space-around;
+    align-items: center;
+    text-align: justify;
+    letter-spacing: .5px;
+    padding: 13px ;
+    border-left: 3px solid rgb(15, 188, 56);
+    border-right: 3px solid rgba(213, 213, 213, 0.845);
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    box-shadow: 0px 0px 10px rgb(15, 188, 56),
+    inset .1em .1em .2em black,
+    inset -.1em -.1em .2em rgb(11, 236, 4);
+
+}
+button:hover{
+    background-image: -webkit-linear-gradient(
+         233deg,
+        rgb(87, 4, 122),
+        black,
+        black
+    );
+    border-left: 3px solid rgb(87, 4, 122);
+    border-right: 3px solid rgba(213, 213, 213, 0.845);
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    box-shadow: 0px 0px 10px rgb(87, 4, 122),
+    inset .1em .1em .2em black,
+    inset -.1em -.1em .2em rgb(87, 4, 122);
+    transition: .5s;
+}
+/* =================================================== Conteudo Usuário  */
+.user{
+    height: 12vw;
+    width: 12vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 33px;
+    border-left: 1px solid purple;
+    border-right: 1px solid purple;
+    position: absolute;
+    top: 5%;
+    left: 87%;
+    box-shadow: 
+    inset .1em .3em 1em purple,
+    inset -.1em -.3em 1em purple;
+    text-align: center;
+    font-size: 1vw;
+}
+img{
+    height: 10vw;
+    clip-path: circle();
+}
+
