@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    text-wrap: wrap;
+    letter-spacing: 1.5px;
+}
+.flex{
+    display: flex;
+}
+/* =================================================== Container */
+.container {
+    height: 100vh; /* Altura total da viewport */
+    
+    background-image: -webkit-linear-gradient(
+        233deg,
+        rgba(128, 0, 128, 0.742),
+        purple,
+        black,
+        black);
+    background-size: 50%;
+    animation: animate 10s infinite linear alternate;
+    color: aliceblue;
+    display: flex; /* Adiciona flexbox para o container */
+    flex-direction: column; /* Alinha os itens em coluna */
+}
+@keyframes animate {
+    0%{
+        background-size: 100%;
+    }
+    100%{
+        background-size: 300%;
+    }
+}
+/* =================================================== Div da Pergunta  */
+.question-box{
+    height: 40vh;
+    width: 66vw;
+    border-bottom: 3px solid purple;
+    border-top: 3px solid purple;
+    margin: 13px 233px auto;
+    margin-bottom: 13px;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 33px;
+    box-shadow:
+    inset .1em .1em 2em black,
+    inset .1em .1em 2em purple,
+    inset -.1em -.1em .2em purple;
+    padding: 13px;
+    flex-direction: column;
+}
+/* =================================================== Conteudo das Respostas  */
+.content-answer{
+    display: flex;               /* Usando Flexbox para alinhar as caixas de seleção */
+    flex-wrap: wrap;             /* Permite que os itens se movam para a linha seguinte, se necessário */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    gap: 20px;                   /* Espaço entre os itens */
+    padding: 13px;
+}
+ 
+.box-answer{
+    background-image: -webkit-linear-gradient(
+        233deg,
+       rgb(128, 0, 128),
+       black,
+       black
+   );        
+   width: 30vw; /* Largura ajustada para um layout mais compacto */
+   height: 8vw; /* Altura ajustada */
+   border: none;
+   color: aliceblue;
+   justify-content: space-around;
+   align-items: center;
+   text-align: justify;
+   letter-spacing: .5px;
+   padding: 13px;
+   border-left: 3px solid purple;
+   border-right: 3px solid rgba(213, 213, 213, 0.845);
+   border-top-left-radius: 33px;
+   border-top-right-radius: 33px;
+   border-bottom-right-radius: 13px;
+   border-bottom-left-radius: 13px;
+   box-shadow: 0px 0px 10px purple,
+   inset .1em .1em .2em black,
+   inset -.1em -.1em .2em rgb(239, 15, 239);
+}
+ 
+.right{
+    background-image: -webkit-linear-gradient(
+         233deg,
+        rgb(15, 188, 56),
+        black,
+        black
+    );        
+    width: 30vw; /* Largura ajustada */
+    height: 8vw; /* Altura ajustada */
+    border: none;
+    color: aliceblue;
+    justify-content: space-around;
+    align-items: center;
+    text-align: justify;
+    letter-spacing: .5px;
+    padding: 13px ;
+    border-left: 3px solid rgb(15, 188, 56);
+    border-right: 3px solid rgba(213, 213, 213, 0.845);
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    box-shadow: 0px 0px 10px rgb(15, 188, 56),
+    inset .1em .1em .2em black,
+    inset -.1em -.1em .2em rgb(11, 236, 4);
+ 
+}
+/* Estilização dos checkboxes */
+.checkbox {
+    margin-right: 10px;
+    accent-color: purple; /* Cor do checkbox */
+    transform: scale(1.3); /* Aumenta o tamanho do checkbox */
+}
+ 
+.checkbox:checked + span {
+    color: #15bc38; /* Cor do texto quando o checkbox é marcado */
+    font-weight: bold;
+}
+ 
+/* =================================================== Estilo do botão hover */
+button:hover{
+    background-image: -webkit-linear-gradient(
+         233deg,
+        rgb(87, 4, 122),
+        black,
+        black
+    );
+    border-left: 3px solid rgb(87, 4, 122);
+    border-right: 3px solid rgba(213, 213, 213, 0.845);
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    box-shadow: 0px 0px 10px rgb(87, 4, 122),
+    inset .1em .1em .2em black,
+    inset -.1em -.1em .2em rgb(87, 4, 122);
+    transition: .5s;
+}
+ 
+/* =================================================== Conteudo Usuário  */
+.user{
+    height: 12vw;
+    width: 12vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 33px;
+    border-left: 1px solid purple;
+    border-right: 1px solid purple;
+    position: absolute;
+    top: 5%;
+    left: 87%;
+    box-shadow:
+    inset .1em .3em 1em purple,
+    inset -.1em -.3em 1em purple;
+    text-align: center;
+    font-size: 1vw;
+}
+img{
+    height: 10vw;
+    clip-path: circle();
+}
