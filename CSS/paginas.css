@@ -1,0 +1,376 @@
+/* ============================================================================== GERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    text-wrap: wrap;
+    letter-spacing: 1.5px;
+}
+.flex{
+    display: flex;
+}
+body{
+    height: 100vh;
+    background-image: -webkit-linear-gradient(
+        233deg,
+        rgba(128, 0, 128, 0.742),
+        purple,
+        black,
+        black
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    animation: animate 10s infinite linear alternate ;
+    color: aliceblue;
+    
+}
+@keyframes animate {
+    0%{
+        background-size: 100%;
+    }
+    100%{
+        background-size: 300%;
+    }
+}
+/* ============================================================================== HEADER */
+header{
+    display: flex;
+    height: 50vh;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.content-user{
+    width: 19%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column-reverse;
+}
+.user{
+    height: 12vw;
+    width: 12vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 33px;
+    border-left: 1px solid purple;
+    border-right: 1px solid purple;
+    box-shadow: 
+    inset .1em .3em 1em purple,
+    inset -.1em -.3em 1em purple;
+    text-align: center;
+    font-size: 1.5vw;
+}
+.img{
+    height: 10vw;
+    clip-path: circle();
+}
+.btn-Nquestion{
+    background-color:purple;
+    width: 10vw;
+    height: 3vw;
+    color: aliceblue;
+    font-size: 1vw;
+    border: none;
+    border-radius: 33px;
+    box-shadow: 
+    inset .1em .3em 1em rgb(27, 26, 27),
+    inset -.1em -.3em 1em purple;
+}
+.question-box{
+    height:auto;
+    width: 45%;
+    border-bottom: 17px solid purple;
+    border-top: 13px solid purple;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 39px;
+    box-shadow: 
+    inset .1em .1em 2em black,
+    inset .1em .1em 2em purple,
+    inset -.1em -.1em .2em purple;
+    padding: 10px;
+    text-align: center;
+    font-size: 1vw;
+}
+
+/* ============================================================================== MAIN */
+
+main{
+    align-items: center;
+    height: auto;
+}
+button:hover{
+    background-image: -webkit-linear-gradient(
+         233deg,
+        rgb(87, 4, 122),
+        black,
+        black
+    );
+    border-left: 3px solid rgb(87, 4, 122);
+    border-right: 3px solid rgba(213, 213, 213, 0.845);
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    box-shadow: 0px 0px 10px rgb(87, 4, 122),
+    inset .1em .1em .2em black,
+    inset -.1em -.1em .2em rgb(87, 4, 122);
+    transition: .5s;
+}
+.answer-content{
+    width: 89%;
+    height: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+.box-answer{
+    background-image: -webkit-linear-gradient(
+        233deg,
+       rgb(128, 0, 128),
+       black,
+       black
+   );        
+   width: 35vw;
+   border: none;
+   height: 10vw;
+   color: aliceblue;
+   justify-content: space-around;
+   align-items: center;
+   letter-spacing: .5px;
+   border-left: 3px solid purple;
+   border-right: 3px solid rgba(213, 213, 213, 0.845);
+   border-top-left-radius: 33px;
+   border-top-right-radius: 33px;
+   border-bottom-right-radius: 13px;
+   border-bottom-left-radius: 13px;
+   box-shadow: 0px 0px 10px purple,
+   inset .1em .1em .2em black,
+   inset -.1em -.1em .2em rgb(239, 15, 239);
+   font-size: 1.3vw;
+}
+.right{
+    background-image: -webkit-linear-gradient(
+         233deg,
+        rgb(15, 188, 56),
+        black,
+        black
+    );        
+    width: 35vw;
+    height: 10vw;
+    border: none;
+    color: aliceblue;
+    justify-content: space-around;
+    align-items: center;
+    text-align: justify;
+    letter-spacing: .5px;
+    padding: 13px ;
+    border-left: 3px solid rgb(15, 188, 56);
+    border-right: 3px solid rgba(213, 213, 213, 0.845);
+    border-top-left-radius: 33px;
+    border-top-right-radius: 33px;
+    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    box-shadow: 0px 0px 10px rgb(15, 188, 56),
+    inset .1em .1em .2em black,
+    inset -.1em -.1em .2em rgb(11, 236, 4);
+
+}
+.icon-prox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+.icon-prox img{
+    height: 3vw;
+    animation: arrow 1s infinite ease-in-out alternate;
+}
+.icon-prox img:hover{
+    height: 3.5vw;
+    animation: arrow 1s infinite ease-in-out alternate;
+    transition: .3s;
+}
+
+@keyframes arrow {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(30px);
+    }
+}
+
+/* ============================================================================== MEdiaQuery HEADER */
+@media (max-width:450px){
+    header{
+        flex-direction: column;
+        height: 66%;
+    }
+    .question-box{
+        width: 89%;
+        height:auto;
+        padding: 13px;
+        font-size: small;
+
+
+    }
+    .content-user{
+        height: 25%;
+        width: 35%;
+ 
+
+    }
+ 
+    .user{
+        height: 21vw;
+        width: 21vw;
+    }
+    .btn-Nquestion{
+        height: 5vw;
+        width: 15vw;
+        font-size: 1.5vw;
+    }
+    .answer-content{
+        flex-direction: column;
+        display: grid;
+        gap: 13px;
+        font-size: larger;
+    }
+    main{
+        flex-direction: column;
+        height: 10%;
+    }
+    .box-answer{
+        font-size: 2.5vw;
+        height: 10vw;
+        width: 99%;
+    }
+}
+
+@media (min-width:768px) and (max-width:1023px){
+    header{
+        display: flex;
+        height:65%;
+    }
+    .question-box{
+        width: 89%;
+        height:23%;
+        font-size: 2vw;
+
+    }
+    .user{
+        height: 21vw;
+        width: 21vw;
+    }
+    .content-user{
+        height: 35%;
+        width: 35%;
+    }
+
+}
+/* ============================================================================== MEdiaQuery MAIN */
+@media (max-width:450px){
+    
+    .answer-content{
+        width: 89%;
+        height: 33vh;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 13px;
+        padding: 13px;
+    }
+    .answer-content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        margin-top: 13px;
+
+    }
+    main{
+        flex-direction: column;
+        height: 10%;
+    }
+    .box-answer{
+        font-size: 2.7vw;
+        width: 89vw;
+        padding: 3px;
+    }
+    .icon-prox img{
+        height: 5vw;
+    }
+}
+@media (min-width:768px) and (max-width:1023px){
+    .answer-content{
+        width: 89%;
+        height: 33vh;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 13px;
+        padding: 13px;
+    }
+    .answer-content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        margin-top: 13px;
+    }
+    main{
+        flex-direction: column;
+        height: 10%;
+    }
+    .box-answer{
+        font-size: 1vw;
+        height: 100%;
+        width: 99%;
+    }
+    .icon-prox img{
+        margin-top: 55px;
+    }
+
+}
+@media (min-width:500px) and (max-width:540px){
+    .question-box{
+        font-size: 1vw;
+        text-align: center;
+    }
+
+    .answer-content{
+        width: 89%;
+        height: 33vh;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 13px;
+        padding: 13px;
+    }
+    .answer-content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        margin-top: 13px;
+    }
+    main{
+        flex-direction: column;
+        height: 10%;
+    }
+    .box-answer{
+        font-size: 1vw;
+        height: 100%;
+        width: 99%;
+    }
+    .icon-prox img{
+        margin-top: 55px;
+    }
+
+}

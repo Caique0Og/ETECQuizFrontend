@@ -9,38 +9,60 @@
 <body>
     <div class="container">
         <div class="question-box">
-            <h2>Selecione as matérias de interesse:</h2>
+            <h2>Selecione o seu curso:</h2>
         </div>
- 
+
+        <!-- Campo de entrada para adicionar novo curso -->
         <div class="content-answer">
+            <input type="text" id="courseInput" placeholder="Digite o curso desejado">
+            <button onclick="addCourse()">Confirmar</button>
+        </div>
+
+        <div class="content-answer" id="coursesContainer">
+            <!-- Cursos existentes, como no seu código original -->
             <label class="box-answer">
-                <input type="checkbox" id="programacao-web" class="checkbox"> Programação Web
+                <input type="checkbox" class="checkbox"> Administração
             </label>
             <label class="box-answer">
-                <input type="checkbox" id="fundamentos-informatica" class="checkbox"> Fundamentos da Informática
+                <input type="checkbox" class="checkbox"> Comércio Exterior
             </label>
             <label class="box-answer">
-                <input type="checkbox" id="banco-dados" class="checkbox"> Banco de Dados
+                <input type="checkbox" class="checkbox"> Desenvolvimento de Sistemas
             </label>
             <label class="box-answer">
-                <input type="checkbox" id="desenvolvimento-sistemas" class="checkbox"> Desenvolvimento de Sistemas
+                <input type="checkbox" class="checkbox"> Eletrônica
             </label>
             <label class="box-answer">
-                <input type="checkbox" id="sistemas-embarcarados" class="checkbox"> Sistemas Embarcados
+                <input type="checkbox" class="checkbox"> Serviços Jurídicos
             </label>
             <label class="box-answer">
-                <input type="checkbox" id="programacao-mobile" class="checkbox"> Programação de Aplicativos Mobile
-            </label>
-            <label class="box-answer">
-                <input type="checkbox" id="analise-projeto" class="checkbox"> Análise e Projeto de Sistemas
+                <input type="checkbox" class="checkbox"> Design de Interiores
             </label>
         </div>
- 
-        <!-- <div class="user">
-            <img src="user-avatar.png" alt="Avatar">
-            <p>Usuário</p>
-        </div> -->
     </div>
+
+    <script>
+        // Função para adicionar um novo curso na lista
+        function addCourse() {
+            // Obtém o valor digitado no campo de entrada
+            const courseName = document.getElementById("courseInput").value.trim();
+            if (courseName) {
+                // Cria um novo elemento de curso
+                const newCourse = document.createElement("label");
+                newCourse.classList.add("box-answer");
+                newCourse.innerHTML = `
+                    <input type="checkbox" class="checkbox"> ${courseName}
+                `;
+
+                // Adiciona o novo curso ao container de cursos
+                document.getElementById("coursesContainer").appendChild(newCourse);
+
+                // Limpa o campo de entrada após adicionar
+                document.getElementById("courseInput").value = '';
+            } else {
+                alert("Por favor, digite um nome de curso válido.");
+            }
+        }
+    </script>
 </body>
 </html>
-

@@ -1,4 +1,8 @@
-
+.animation-quiz{
+    height: 20vw;
+    width: 20vw;
+    position: relative;
+}
 .title{
     width: 15.5vw;
     height: 15.5vw;
@@ -47,42 +51,41 @@
     animation: quiz 5.5s infinite linear alternate-reverse, 
     quiz-r 4.5s infinite linear alternate-reverse ;    
     position: absolute;
-    left:3.5%;
-    top: 15%;
+    left:7%;
+    top: 35%;
 }
 .u{
     animation: quizu 5.5s infinite linear alternate-reverse, 
     quizu-r 4.5s infinite linear alternate-reverse ;  
     position: absolute;
-    left:6.5%;
-    top: 15%;
+    left:23%;
+    top: 35%;
 }
 .i{
     animation: quiz 5.5s infinite linear alternate-reverse, 
     quiz-r 4.5s infinite linear alternate-reverse ; 
     position: absolute;
-    left:9.7%;
-    top: 15%;
+    left:42%;
+    top: 35%;
 }
 .z{
     animation: quizu 5.5s infinite linear alternate-reverse, 
     quizu-r 4.5s infinite linear alternate-reverse ;
     position: absolute;
-    left:11.3%;
-    top: 15%;
+    left:51%;
+    top: 35%;
 }
 .span{
     position: relative;
     width: 100%;
     height: 6vw;
-    background-color: aqua;
 }
 @keyframes quiz {
     0%{
         transform: rotateX(-33deg);
         transform: scale(30px);
         text-shadow: purple 0px 0px 33px;
-        top: 14%;
+        top: 30%;
     }
     33%{
         transform: skewX(-5deg);
@@ -145,7 +148,7 @@
         transform: skewX(8deg);
         transform: scale(45px);
         height: 5vw;
-        top: 14%;
+        top: 30%;
 
     }
     100%{
@@ -183,4 +186,276 @@
 }
 span{
     font-size: 4vw;
+}
+/* =============================================================== Animação Media Query */
+@media (max-width:450px){
+
+    .q{
+        animation: quiz 5.5s infinite linear alternate-reverse, 
+        quiz-r 4.5s infinite linear alternate-reverse ;    
+        position: absolute;
+        left:7%;
+        top: 35%;
+    }
+    .u{
+        animation: quizu 5.5s infinite linear alternate-reverse, 
+        quizu-r 4.5s infinite linear alternate-reverse ;  
+        position: absolute;
+        left:23%;
+        top: 35%;
+    }
+    .i{
+        animation: quiz 5.5s infinite linear alternate-reverse, 
+        quiz-r 4.5s infinite linear alternate-reverse ; 
+        position: absolute;
+        left:42%;
+        top: 35%;
+    }
+    .z{
+        animation: quizu 5.5s infinite linear alternate-reverse, 
+        quizu-r 4.5s infinite linear alternate-reverse ;
+        position: absolute;
+        left:51%;
+        top: 35%;
+    }
+
+    @keyframes quiz {
+        0%{
+            transform: rotateX(-33deg);
+            transform: scale(30px);
+            text-shadow: purple 0px 0px 33px;
+            top: 30%;
+        }
+        33%{
+            transform: skewX(-5deg);
+            transform: scale(33px);
+            opacity: 0;
+    
+        }
+        66%{
+            transform: skewX(-8deg);
+            transform: scale(35px);
+    
+        }
+        100%{
+            transform : skewX(-13deg);
+            transform: scale(38px);
+            color: purple;
+            text-shadow:  purple 0px 0px 33px;
+        }
+    }
+    
+    @keyframes quiz-r {
+        0%{
+            transform: scale(30px);
+            transition: 1s;
+        }
+        33%{
+            transform: skewX(5deg);
+            transform: scaleX(33px);
+            transform: rotateY(0deg);
+    
+        }
+        66%{
+            transform: skewX(8deg);
+            transform: scale(35px);
+            transform: rotateY(180deg);
+    
+        }
+        100%{
+            transform: skewX(13deg);
+            transform: scale(38px);
+            filter: blur(1px);
+            text-shadow: purple 0px 0px 13px;
+            height: 15vw;
+    
+        }
+    }
+    /* ================================= animacão letra u */
+    
+    @keyframes quizu {
+        0%{
+            transform: rotate(-33deg);
+            transform: scale(40px);
+        }
+        33%{
+            transform: skewX(5deg);
+            transform: scale(43px);
+    
+        }
+        66%{
+            transform: skewX(8deg);
+            transform: scale(45px);
+            height: 5vw;
+            top: 30%;
+    
+        }
+        100%{
+            transform: skewX(13deg);
+            transform: scale(48px);
+            text-shadow: purple 0px 0px 33px;
+            filter: blur(1px);
+            height: 15vw;
+            color: purple;
+    
+        }
+    }
+    @keyframes quizu-r {
+        0%{
+            transform: scale(40px);
+        }
+        33%{
+            transform: skewX(-5deg);
+            transform: scaleX(43px);
+            transform: rotateY(0deg);
+    
+        }
+        66%{
+            transform: skewX(-8deg);
+            transform: scale(45px);
+            transform: rotateY(180deg);
+    
+        }
+        100%{
+            transform: skewX(-13deg);
+            transform: scale(48px);
+            text-shadow: purple 0px 0px 33px;
+    
+        }
+    }
+}
+/* ==================================================================== TABLETS */
+@media (min-width:768px) and (max-width:1024px){
+    .q{
+        animation: quiz 5.5s infinite linear alternate-reverse, 
+        quiz-r 4.5s infinite linear alternate-reverse ;    
+        position: absolute;
+        left:7%;
+        top: 35%;
+    }
+    .u{
+        animation: quizu 5.5s infinite linear alternate-reverse, 
+        quizu-r 4.5s infinite linear alternate-reverse ;  
+        position: absolute;
+        left:23%;
+        top: 35%;
+    }
+    .i{
+        animation: quiz 5.5s infinite linear alternate-reverse, 
+        quiz-r 4.5s infinite linear alternate-reverse ; 
+        position: absolute;
+        left:42%;
+        top: 35%;
+    }
+    .z{
+        animation: quizu 5.5s infinite linear alternate-reverse, 
+        quizu-r 4.5s infinite linear alternate-reverse ;
+        position: absolute;
+        left:51%;
+        top: 35%;
+    }
+    @keyframes quiz {
+        0%{
+            transform: rotateX(-33deg);
+            transform: scale(30px);
+            text-shadow: purple 0px 0px 33px;
+            top: 30%;
+        }
+        33%{
+            transform: skewX(-5deg);
+            transform: scale(33px);
+            opacity: 0;
+    
+        }
+        66%{
+            transform: skewX(-8deg);
+            transform: scale(35px);
+    
+        }
+        100%{
+            transform : skewX(-13deg);
+            transform: scale(38px);
+            color: purple;
+            text-shadow:  purple 0px 0px 33px;
+        }
+    }
+    
+    @keyframes quiz-r {
+        0%{
+            transform: scale(30px);
+            transition: 1s;
+        }
+        33%{
+            transform: skewX(5deg);
+            transform: scaleX(33px);
+            transform: rotateY(0deg);
+    
+        }
+        66%{
+            transform: skewX(8deg);
+            transform: scale(35px);
+            transform: rotateY(180deg);
+    
+        }
+        100%{
+            transform: skewX(13deg);
+            transform: scale(38px);
+            filter: blur(1px);
+            text-shadow: purple 0px 0px 13px;
+            height: 15vw;
+    
+        }
+    }
+    /* ================================= animacão letra u */
+    
+    @keyframes quizu {
+        0%{
+            transform: rotate(-33deg);
+            transform: scale(40px);
+        }
+        33%{
+            transform: skewX(5deg);
+            transform: scale(43px);
+    
+        }
+        66%{
+            transform: skewX(8deg);
+            transform: scale(45px);
+            height: 5vw;
+            top: 30%;
+    
+        }
+        100%{
+            transform: skewX(13deg);
+            transform: scale(48px);
+            text-shadow: purple 0px 0px 33px;
+            filter: blur(1px);
+            height: 15vw;
+            color: purple;
+    
+        }
+    }
+    @keyframes quizu-r {
+        0%{
+            transform: scale(40px);
+        }
+        33%{
+            transform: skewX(-5deg);
+            transform: scaleX(43px);
+            transform: rotateY(0deg);
+    
+        }
+        66%{
+            transform: skewX(-8deg);
+            transform: scale(45px);
+            transform: rotateY(180deg);
+    
+        }
+        100%{
+            transform: skewX(-13deg);
+            transform: scale(48px);
+            text-shadow: purple 0px 0px 33px;
+    
+        }
+    }
 }
