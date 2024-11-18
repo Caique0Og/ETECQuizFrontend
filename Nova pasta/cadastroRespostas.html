@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Respostas</title>
+  <link rel="stylesheet" href="style/layout.css">
+</head>
+<body>
+  <div class="title">
+    <div class="title1"></div>
+  </div>
+  <h1 class="q">Q</h1>
+  <h1 class="u">U</h1>
+  <h1 class="i">I</h1>
+  <h1 class="z">Z</h1>
+
+  <div class="question-box">
+    <form id="formRespostas">
+      <label for="perguntaAssociada">Pergunta:</label>
+      <select id="perguntaAssociada" name="perguntaAssociada"></select>
+
+      <div class="content-answer">
+        <label><input type="radio" class="checkbox" name="correta" value="A"> A</label>
+        <input type="text" id="alternativaA" required>
+        <label><input type="radio" class="checkbox" name="correta" value="B"> B</label>
+        <input type="text" id="alternativaB" required>
+        <label><input type="radio" class="checkbox" name="correta" value="C"> C</label>
+        <input type="text" id="alternativaC" required>
+        <label><input type="radio" class="checkbox" name="correta" value="D"> D</label>
+        <input type="text" id="alternativaD" required>
+      </div>
+
+      <button type="button" onclick="adicionarResposta()">Adicionar Resposta</button>
+    </form>
+    <ul id="listaRespostas"></ul>
+    <button onclick="location.href='cadastroPerguntas.html'">Ir para Cadastro de Perguntas</button>
+  </div>
+
+  <script>
+    let respostas = JSON.parse(localStorage.getItem('respostas')) || [];
+
+    function carregarPerguntas() {
+      const perguntasSalvas = JSON.parse(localStorage.getItem('perguntas')) || [];
+      const select = document.getElementById('perguntaAssociada');
+      select.innerHTML = perguntasSalvas.length ? perguntasSalvas.map(pergunta => `<option value="${pergunta}">${pergunta}</option>`).join('') : '<option>Nenhuma pergunta cadastrada</option>';
+    }
+
+    function adicionarResposta() {
+      const perguntaAssociada = document.getElementById('perguntaAssociada').value;
+      const alternativaA = document.getElementById('alternativaA').value;
+      const alternativaB = document.getElementById('alternativaB').value;
+      const alternativaC = document.getElementById('alternativaC').value;
+      const alternativaD = document.getElementById('alternativaD').value;
+      const alternativaCorreta = document.querySelector('input[name="correta"]:checked') ? document.querySelector('input[name="correta"]:checked').value : null;
+
+      if (perguntaAssociada && alternativaA && alternativaB && alternativaC && alternativaD && alternativaCorreta) {
+        const respostaObj = {
+          pergunta: perguntaAssociada,
+          alternativas: { A: alternativaA, B: alternativaB, C: alternativaC, D: alternativaD },
+          correta: alternativaCorreta
+        };
+        respostas.push(respostaObj);
+        localStorage.setItem('respostas', JSON.stringify(respostas));
+        atualizarListaRespostas();
+        document.getElementById('formRespostas').reset();
+      } else {
+        alert('Preencha todos os campos corretamente!');
+      }
+    }
+
+    function atualizarListaRespostas() {
+      const listaRespostas = document.getElementById('listaRespostas');
+      listaRespostas.innerHTML = respostas.map(item => `
+        <li>
+          <strong>${item.pergunta}</strong><br>
+          A: ${item.alternativas.A}<br>
+          B: ${item.alternativas.B}<br>
+          C: ${item.alternativas.C}<br>
+          D: ${item.alternativas.D}<br>
+          <em>Correta: ${item.correta}</em>
+        </li>
+      `).join('');
+    }
+
+    window.onload = function() {
+      carregarPerguntas();
+      atualizarListaRespostas();
+    };
+  </script>
+</body>
+</html>

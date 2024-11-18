@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Perguntas</title>
+  <link rel="stylesheet" href="style/layout.css">
+</head>
+<body>
+  <div class="title">
+    <div class="title1"></div>
+  </div>
+  <h1 class="q">Q</h1>
+  <h1 class="u">U</h1>
+  <h1 class="i">I</h1>
+  <h1 class="z">Z</h1>
+    <div class="container">
+      <div class="question-box">
+        <h2>Cadastro de Perguntas</h2>
+        <form id="formPerguntas">
+          <label for="perguntaAssociada">Pergunta:</label>
+          <input type="text" id="perguntaAssociada" placeholder="Digite a pergunta" required>
+
+          <div class="content-answer">
+            <button type="button" onclick="adicionarPergunta()">Adicionar Pergunta</button>
+          </div>
+        </form>
+        
+        
+        <ul id="listaPerguntas"></ul>
+        
+      
+        <button onclick="location.href='cadastroRespostas.html'">Ir para Cadastro de Respostas</button>
+      </div>
+    </div>
+
+  <script>
+   
+    let perguntas = JSON.parse(localStorage.getItem('perguntas')) || [];
+
+    
+    function adicionarPergunta() {
+      const perguntaInput = document.getElementById('perguntaAssociada').value;
+
+     
+      if (perguntaInput && !perguntas.includes(perguntaInput)) {
+        perguntas.push(perguntaInput);
+        localStorage.setItem('perguntas', JSON.stringify(perguntas));
+        atualizarListaPerguntas();
+        document.getElementById('perguntaAssociada').value = ''; 
+      } else if (perguntas.includes(perguntaInput)) {
+        alert('Esta pergunta já foi cadastrada!');
+      } else {
+        alert('Digite uma pergunta válida!');
+      }
+    }
+
+    
+    function atualizarListaPerguntas() {
+      const listaPerguntas = document.getElementById('listaPerguntas');
+      listaPerguntas.innerHTML = perguntas.map(pergunta => `<li>${pergunta}</li>`).join('');
+    }
+
+    
+    window.onload = atualizarListaPerguntas;
+  </script>
+</body>
+</html>
