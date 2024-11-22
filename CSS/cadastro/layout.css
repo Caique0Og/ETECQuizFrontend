@@ -20,7 +20,10 @@
     box-shadow: inset -.1em -.3em .1em rgba(155, 72, 199, 0.836);
     animation: rotate 10s infinite linear;
   }
-  
+  a{
+    text-decoration: none;
+    color: aliceblue;
+  }
 
 /* =================================================== Animações */
 @keyframes rotate {
@@ -78,12 +81,27 @@
     width: 90%;
     max-width: 600px;
     margin: 20px auto;
-    border: 3px solid purple; 
+    border: 3px solid purple;
+    background-color: transparent; 
     border-radius: 33px;
     box-shadow: inset .1em .1em 2em purple, inset .1em .1em 2em purple, inset -.1em -.1em .2em purple;
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    transition: .5s;
 }
+button:hover{
+    background-image: -webkit-linear-gradient(
+         233deg,
+        rgb(87, 4, 122),
+        black,
+        black
+    );
+    transition: .5s;
+}
+
 /* =================================================== Resposta */
 .content-answer {
     display: flex;
@@ -121,10 +139,34 @@ html, body {
     height: 100%; 
     margin: 0;
     padding: 0;
-    background-color: black; 
+    background-color: black;
+    background-size: 100%;
+    animation: animate 10s infinite linear alternate ;    
     color: white; 
 }
-
+.container {
+    height: 100vh; 
+    margin: 0;
+    padding: 0;
+    background-image: -webkit-linear-gradient(
+        233deg,
+        rgba(128, 0, 128, 0.742),
+        purple,
+        black,
+        black
+    );
+    background-size: 100%;
+    animation: animate 10s infinite linear alternate ;    
+    color: white; 
+}
+@keyframes animate {
+    0%{
+        background-size: 100%;
+    }
+    100%{
+        background-size: 300%;
+    }
+}
 
 header {
     background-color: #4CAF50;
